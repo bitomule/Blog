@@ -27,6 +27,6 @@ struct Blog: Website {
 
 try Blog().publish(
     withTheme: .blog,
-    additionalSteps: [.deploy(using: .gitHub("bitomule/Blog"))],
+    deployedUsing: .gitHub("bitomule/Blog", useSSH: true),
     plugins: [.splash(withClassPrefix: "")]
 )
