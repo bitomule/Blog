@@ -1,7 +1,11 @@
 ---
 date: 2019-03-09 16:05
 tags: Web, NAS
-excerpt: Today I want to share another experience with my NAS, in this case, I'll talk about how to replace container station with a better alternative called Portainer. 
+excerpt: Today I want to share another experience with my NAS, in this case, I'll talk about how to replace container station with a better alternative called Portainer.
+
+As you may know, I've played with docker on my Qnap NAS. This has to lead me to hate container station software. It has too many limits and issues so as one of my experiments I wanted to find a replacement to it.
+
+The best replacement I've found is portainer and as always, when you know what you want the steps to do it are a lot easier. 
 ---
 # Using portainer to manage container station
 

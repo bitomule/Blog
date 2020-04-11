@@ -1,7 +1,9 @@
 ---
 date: 2019-03-12 08:10
 tags: Web
-excerpt: After having my blog up and running there was one piece missing, I didn't have any kind of tracking so it was impossible to know if people were reading me and what were they reading. 
+excerpt: After having my blog up and running there was one piece missing, I didn't have any kind of tracking so it was impossible to know if people were reading me and what were they reading.
+
+Looks impossible, doesn't it?
 ---
 # Tracking your site metrics without sacrificing​ user privacy
 
