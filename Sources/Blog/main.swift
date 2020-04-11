@@ -6,12 +6,12 @@ import Plot
 // This type acts as the configuration for your website.
 struct Blog: Website {
     enum SectionID: String, WebsiteSectionID {
-        // Add the sections that you want your website to contain here:
         case posts
+        case about
     }
     
     struct ItemMetadata: WebsiteItemMetadata {
-        // Add any site-specific metadata that you want to use here.
+        var excerpt: String
     }
     
     // Update these properties to configure your website:
@@ -20,10 +20,13 @@ struct Blog: Website {
     var description = "My thoughts about iOS, technology or any other thing that comes to my mind."
     var language: Language { .english }
     var imagePath: Path? { nil }
+    var socialMediaLinks: [ContactLink] { [.email, .linkedIn, .github, .twitter] }
 }
 
 // This will generate your website using the built-in Foundation theme:
-try Blog().publish(using: [
-    .installPlugin(.splash(withClassPrefix: "splashcode")),
-    .generateHTML(withTheme: .foundation)
-])
+
+try Blog().publish(
+    withTheme: .blog,
+//    additionalSteps: [.deploy(using: .gitHub("nitesuit/nitesuit.github.io"))],
+    plugins: [.splash(withClassPrefix: "splashcode")]
+)
