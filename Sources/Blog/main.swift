@@ -31,6 +31,6 @@ try Blog().publish(
 //    deployedUsing: .gitHub("bitomule/Blog", useSSH: true),
     plugins: [
         .splash(withClassPrefix: ""),
-        .generateCNAME(with: ["blog.bitomule.com","www.blog.bitomule.com"])
+        .generateCNAME(with: ["blog.bitomule.com","www.blog.bitomule.com","bitomule.com"])
     ]
 )
