@@ -10,7 +10,8 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/johnsundell/publish.git", from: "0.3.0"),
         .package(url: "https://github.com/johnsundell/splashpublishplugin", from: "0.1.0"),
-        .package(url: "https://github.com/SwiftyGuerrero/CNAMEPublishPlugin", from: "0.1.0")
+        .package(url: "https://github.com/SwiftyGuerrero/CNAMEPublishPlugin", from: "0.1.0"),
+        .package(url: "https://github.com/wacumov/VerifyResourcesExistPublishPlugin", from: "0.1.0")
     ],
     targets: [
         .target(
@@ -18,7 +19,8 @@ let package = Package(
             dependencies: [
                 "Publish",
                 "SplashPublishPlugin",
-                "CNAMEPublishPlugin"
+                "CNAMEPublishPlugin",
+                "VerifyResourcesExistPublishPlugin"
             ]
         )
     ]

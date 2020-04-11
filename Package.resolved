@@ -90,6 +90,15 @@
           "revision": "801c2878e4c6c5baf32fe132e1f3f3af6f9fd1b0",
           "version": "0.4.0"
         }
+      },
+      {
+        "package": "VerifyResourcesExistPublishPlugin",
+        "repositoryURL": "https://github.com/wacumov/VerifyResourcesExistPublishPlugin",
+        "state": {
+          "branch": null,
+          "revision": "fcb7821d43ba635207283ab18caabbcfda8d9c2f",
+          "version": "0.1.0"
+        }
       }
     ]
   },

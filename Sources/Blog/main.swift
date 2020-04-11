@@ -3,6 +3,7 @@ import Publish
 import SplashPublishPlugin
 import Plot
 import CNAMEPublishPlugin
+import VerifyResourcesExistPublishPlugin
 
 // This type acts as the configuration for your website.
 struct Blog: Website {
@@ -31,6 +32,7 @@ try Blog().publish(
 //    deployedUsing: .gitHub("bitomule/Blog", useSSH: true),
     plugins: [
         .splash(withClassPrefix: ""),
-        .generateCNAME(with: ["blog.bitomule.com","www.blog.bitomule.com","bitomule.com"])
+        .generateCNAME(with: ["blog.bitomule.com","www.blog.bitomule.com","bitomule.com"]),
+        .verifyResourcesExist()
     ]
 )
