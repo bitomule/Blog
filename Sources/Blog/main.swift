@@ -25,6 +25,5 @@ struct Blog: Website {
 // This will generate your website using the built-in Foundation theme:
 try Blog().publish(using: [
     .installPlugin(.splash(withClassPrefix: "splashcode")),
-    .generateHTML(withTheme: .foundation),
-    .deploy(using: .gitHub("bitomule/Blog", useSSH: true))
+    .generateHTML(withTheme: .foundation)
 ])
