@@ -21,8 +21,9 @@ The problem was replacing the amazing job by RxSwift contributors with a Combine
 
 Realm has a nice notification based way to get changes from Realm itself, queries (Results) and single objects and I already had experience with it because I built the same thing for [ReactiveCocoa](https://medium.com/@Bitomule/creating-reactiveswiftrealm-part-1-248ac5c721af) some years ago. It works like this:
 
+```swift
     let token = collection.observe { changeset in ... }
-    
+```
 
 If you know a bit about RxSwift it’ll be trivial to transform this into an Observable and there’s only one tricky part you’ll have to consider: **the token**. You have to store that token while the observable is alive and invalidate it once the observable is finished. If you get this wrong, you’ll get no changes because notification is dead before you even receive the first change or it will stay alive forever.
 
@@ -32,32 +33,36 @@ The problem is that Combine does not work in the same way: you don’t return a 
 
 Welcome to handleEvents:
 
+```swift
     public func handleEvents(receiveSubscription: ((Subscription) -> Void)? = nil, receiveOutput: ((Self.Output) -> Void)? = nil, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void)? = nil, receiveCancel: (() -> Void)? = nil, receiveRequest: ((Subscribers.Demand) -> Void)? = nil) -> Publishers.HandleEvents<Self>
-    
+```
 
 Nice, isn’t it? (Generics can melt your brain)
 
 It’s like the do operator on RxSwift. It allows us to execute code when specific events happen. In this case, the events we are interested in are **receiveCompletion** and **receiveCancel**. Those are the 2 cases where we need to invalidate the token so I added the code to my publisher init call:
 
+```swift
     .handleEvents(receiveCompletion: { _ in
         token?.invalidate()
     }, receiveCancel: {
         token?.invalidate()
     })
-    
+```
 
 But this doesn’t compile. The return type of handleEvents is not AnyPublisher, it’s a completely different type that conforms to Publisher protocol. To get the proper type back we’ve to use **eraseToAnyPublisher()**. Note this method down: if you start using Combine you’ll use it a lot, or at least that was my experience (I hope I’m wrong and there’s a better way to skip it).
 
+```swift
     .handleEvents(receiveCompletion: { _ in
         token?.invalidate()
     }, receiveCancel: {
         token?.invalidate()
     })
     .eraseToAnyPublisher()
-    
+```
 
 Once I had this solved I started to add new methods to my pod to observe realm, observe a collection, observe a changeset... And I found myself writing the same code again and again, so I extracted it and made it a bit more generic.
 
+```swift
     extension Publisher {
         func onDispose(_ onDispose: @escaping () -> Void) -> AnyPublisher<Output, Failure> {
             return self.handleEvents(receiveCompletion: { _ in
@@ -67,14 +72,15 @@ Once I had this solved I started to add new methods to my pod to observe realm, 
             }).eraseToAnyPublisher()
         }
     }
-    
+```
 
 Now the code was a bit nicer:
 
+```swift
     .onDispose {
         token?.invalidate()
     }
-    
+```
 
 So far I had found 2 issues adding Combine to my RxSwift project. One a bit specific of the use case, but I’ve found myself using reaseToAnyPublisher() **A LOT**.
 

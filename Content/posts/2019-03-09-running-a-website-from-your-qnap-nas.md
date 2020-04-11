@@ -49,6 +49,7 @@ You'll have to setup:
 
 We almost have Caddy ready, now we just need to create a new file named Caddyfile without extension inside the conf folder. The content, for example, could be:
 
+```
     yourowndomain.com {
      tls youremail
     
@@ -58,6 +59,7 @@ We almost have Caddy ready, now we just need to create a new file named Caddyfil
      log stdout
      errors stdout
     }
+```
 
 Save it and restart your container. Caddy should start and it will register a new SSL certificate for your domain. Magic!
 ![](/content/images/2019/03/giphy-1.gif)
@@ -71,6 +73,7 @@ There's only one missing part: the domain. You'll need to configure your domain 
 
 At this point, you have everything ready. Your NAS is serving a static site with SSL. Serving dynamic content either from another service on your NAS on from another docker you'll have to use the IP. Don't use localhost, use the IP instead. For example:
 
+```
     yourcustomdomain.com {   
     	tls youremail@here.com   
     	proxy / https://192.168.1.57:4433 {     
@@ -78,5 +81,6 @@ At this point, you have everything ready. Your NAS is serving a static site with
     		transparent   
     	}
     }
+```
 
 This will allow you to proxy your domain to a different IP while keeping the SSL. Magic, again.

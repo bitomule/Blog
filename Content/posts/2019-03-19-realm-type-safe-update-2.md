@@ -6,6 +6,7 @@ excerpt: A few days ago, at work, my colleague [@amartinezmes](https://twitter.c
 
 A few days ago, at work, my colleague [@amartinezmes](https://twitter.com/amartinezmes) informed me about an issue we were about to solve. He had to update a Realm object property as easy and as fast as possible because that process will happen tons of times. To do it he was about to use Realm Key-value coding and also the partial update option. The first approach was something like this:
 
+```swift
     func update(id: Any, keyToUpdate: String, value: Any) {
         guard let idKey = OrderDataModel.primaryKey() else { return }
         let realm = try! Realm()
@@ -13,7 +14,7 @@ A few days ago, at work, my colleague [@amartinezmes](https://twitter.com/amarti
             realm.create(OrderDataModel.self, value: [idKey: id, keyToUpdate: value], update: true)
         }
     }
-    
+```
 
 Of course, we don't create Realm there and we use a generic data model but it's ok as an example.
 
@@ -29,13 +30,15 @@ Here's when the magic of Keypath came into action. I had read a post about keypa
 
 We were sure we could change this:
 
+```swift
     func update(id: Any, keyToUpdate: String, value: Any)
-    
+```    
 
 into this:
 
+```swift
     func update<T:Any>(id: Any, keyToUpdate: KeyPath<OrderDataModel, T>, value: T)
-    
+```   
 
 That will make the function almost 100% type-safe (let's ignore the id). Using this function won't allow us to use an invalid property and the value should always match the type from keypath so there can't be a type mismatch between both.
 
@@ -48,34 +51,38 @@ We spend a bit more time finding the right solution to this and the best approac
 1. 
 Create a protocol to represent DataModels that could provide a String from a key path
 
+```swift
     protocol KeypathStringConvertible {
         static func stringValue(keyPath: AnyKeyPath) -> String
     }
-    
+```
 
 2. 
 Give it a default implementation
 
+```swift
     extension KeypathStringConvertible {
         static public func stringValue(keyPath: AnyKeyPath) -> String {
             fatalError("stringValue has not been implemented")
         }
     }
-    
+```
 
 3. 
 Extend PartialKeyPath to support stringValue when Root type matches the protocol
 
+```swift
     extension PartialKeyPath where Root: KeypathStringConvertible {
         var stringValue: String {
             return Root.stringValue(keyPath: self)
         }
     }
-    
+```   
 
 4. 
 Make our data models implement the protocol
 
+```swift
     extension OrderDataModel: KeypathStringConvertible {
         static func stringValue(keyPath: AnyKeyPath) -> String {
             switch keyPath {
@@ -86,12 +93,13 @@ Make our data models implement the protocol
             }
         }
     }
-    
+```
 
 This is the weakest part, the one where we still have much to improve because it's manual and far from type-safe, any typo here will crash on runtime. We plan to fix this in the next step but at least is better to have string property names next to properties.
 
 Now we can go back to our update function and make the magic happen:
 
+```swift
     func update<T:Any>(id: Any, keyToUpdate: KeyPath<OrderDataModel, T>, value: T) {
         guard let idKey = OrderDataModel.primaryKey() else { return }
         let realm = try! Realm()
@@ -99,6 +107,6 @@ Now we can go back to our update function and make the magic happen:
             realm.create(OrderDataModel.self, value: [idKey: id, keyToUpdate.stringValue: value], update: true)
         }
     }
-    
+```   
 
 Now our update function is type safe. Of course, this was only the first iteration, now we can expand Keypath to queries and fix that weak strings we´ve moved closer to the type definition.

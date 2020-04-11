@@ -35,13 +35,14 @@ This image was **[geerlingguy/fathom](https://hub.docker.com/r/geerlingguy/fatho
 
 - You have to create and .env file in your shared volume with the content
 
+```
     FATHOM_SERVER_ADDR=9000
     FATHOM_GZIP=true
     FATHOM_DEBUG=true
     FATHOM_DATABASE_DRIVER="sqlite3"
     FATHOM_DATABASE_NAME="fathom.db"
     FATHOM_SECRET="create-a-random-key-and-paste-it-here"
-    
+```
 
 - In order to protect your Fathom with user and password you should run in your docker terminal (connecting with portainer is really easy) :
 

@@ -20,11 +20,11 @@ extension Node where Context == HTML.DocumentContext {
             ),
             .link(
                 .rel(.stylesheet),
-                .href("Pure/styles.css")
+                .href("/Pure/styles.css")
             ),
             .link(
                 .rel(.stylesheet),
-                .href("all.css")
+                .href("/all.css")
             )
         )
     }
