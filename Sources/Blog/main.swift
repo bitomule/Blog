@@ -15,7 +15,7 @@ struct Blog: Website {
     }
     
     // Update these properties to configure your website:
-    var url = URL(string: "https://blog.bitomule.com")!
+    var url = URL(string: "https://testblog.bitomule.com")!
     var name = "Bitomule's learning shack"
     var description = "My thoughts about iOS, technology or any other thing that comes to my mind."
     var language: Language { .english }
@@ -27,6 +27,6 @@ struct Blog: Website {
 
 try Blog().publish(
     withTheme: .blog,
-//    additionalSteps: [.deploy(using: .gitHub("nitesuit/nitesuit.github.io"))],
+    additionalSteps: [.deploy(using: .gitHub("bitomule/Blog"))],
     plugins: [.splash(withClassPrefix: "")]
 )
