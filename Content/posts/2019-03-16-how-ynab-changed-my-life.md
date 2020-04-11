@@ -3,7 +3,7 @@ date: 2019-03-16 10:30
 tags: YNAB
 excerpt: I’ve been trying to write this post for months, but important things take time and YNAB has been one of the key parts for some years.
 
-I discovered [YNAB](https://ynab.com/referral/?ref=ZR3TKOTMYpCMxC6H&amp;utm_source=customer_referral) listening to a popular Spanish podcast a few years ago when I was working as a freelance and I was struggling to get my economy under control. Having to save VAT each quarter while living in Madrid paying all the expenses was really hard and each month there were new surprises usually related to the car.
+I discovered YNAB listening to a popular Spanish podcast a few years ago when I was working as a freelance and I was struggling to get my economy under control. Having to save VAT each quarter while living in Madrid paying all the expenses was really hard and each month there were new surprises usually related to the car. Ynab changed my life and in this post I'll explain why.
 ---
 # How YNAB changed my life
 

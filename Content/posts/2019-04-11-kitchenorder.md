@@ -1,8 +1,8 @@
 ---
 date: 2019-04-11 17:06
 tags: Apps
-excerpt: Today is a great day. After some days of talking with Apple review team, I got my next app approved, [KitchenOrder](https://kitchenorder.app).
-When I work on apps after work I use to work on apps I want to use, use my knowledge to help with the problems I have. [My first app](https://itunes.apple.com/es/app/tripplan/id1241258595?mt=8) was developed to help me plan my trips and it was super useful (although I don’t use it that much these days) but this one I’m releasing today is different, in this case, the app was planned to solve a problem to my father.
+excerpt: Today is a great day. After some days of talking with Apple review team, I got my next app approved, KitchenOrder.
+When I work on apps after work I use to work on apps I want to use. I use my knowledge to help with the problems I have but this time I’m releasing something different, in this case, the app was planned to solve a problem for my father.
 ---
 # Introducing KitchenOrder
 
