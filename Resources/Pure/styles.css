@@ -54,6 +54,7 @@ h3 {
     text-transform: capitalize;
 }
 .brand-tagline {
+    margin: 1em 0em 1em 0em;
     font-weight: 300;
     color: rgba(0, 0, 0, 0.8);
 }
