@@ -29,7 +29,7 @@ struct Blog: Website {
 
 try Blog().publish(
     withTheme: .blog,
-//    deployedUsing: .gitHub("bitomule/Blog", useSSH: true),
+    deployedUsing: .gitHub("bitomule/blog.bitomule.com"),
     plugins: [
         .splash(withClassPrefix: ""),
         .generateCNAME(with: ["blog.bitomule.com","www.blog.bitomule.com","bitomule.com"]),
