@@ -7,6 +7,7 @@ excerpt: Calculating size of texts is one of the most common questions when you 
 
 I'm currently working on an iPhone app that uses a 3rd party chat software and adding some custom message types to it requires that collection cell height is precalculated. I don't remember all the iOS APIs on my head but a quick search on google just showed a UIFont extension that calculates a text box (UILabel or TextView) size.  It was something like:
 
+```swift
 	extension UIFont {
 	func sizeOfString (string: String, constrainedToWidth width: Double) -> CGSize {
 	return NSString(string: string).boundingRectWithSize(CGSize(width: width, height: DBL_MAX),
@@ -15,6 +16,7 @@ I'm currently working on an iPhone app that uses a 3rd party chat software and a
 	context: nil).size
 	}
 	}
+```
 
 It was easy and fast. I also needed it in another place to get width with a defined height so I changed it to allow it and done! Just using a font reference I can get the size of a text box. I added some tests just to be sure that it returns the same size I get in interface builder for my view (including margins and other views) and it worked perfect.
 
@@ -28,9 +30,11 @@ It was something I've never used but the only option I had so I went to official
 
 I'm not sure how fast it is but fixed the big issue I had. If you find the same issue hope you find this post and can just copy paste this code to your app:
 
+```swift
 	func sizeOfString (string: String, constrainedToWidth width: Double) -> CGSize {
 	let attributes = [NSFontAttributeName:self,]
 	let attString = NSAttributedString(string: string,attributes: attributes)
 	let framesetter = CTFramesetterCreateWithAttributedString(attString)
 	return CTFramesetterSuggestFrameSizeWithConstraints(framesetter, CFRange(location: 0,length: 0), nil, CGSize(width: width, height: DBL_MAX), nil)
 	}
+```
