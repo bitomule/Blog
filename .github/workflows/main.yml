@@ -22,5 +22,17 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
   
-    - name: Run a one-line script
+    - name: Generate blog
       run: swift run Blog
+    - name: GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v1.4.0
+      with:
+        # GitHub repository where assets will be deployed (default current)
+        repo: bitomule/blog.bitomule.com
+        target_branch: master
+        keep_history: true
+        allow_empty_commit: false
+        # Build directory to deploy
+        build_dir: Output
+        committer_name: Bitomule
+        commit_message: Update blog content
