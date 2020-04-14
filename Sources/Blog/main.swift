@@ -9,7 +9,6 @@ import VerifyResourcesExistPublishPlugin
 struct Blog: Website {
     enum SectionID: String, WebsiteSectionID {
         case posts
-        case about
     }
     
     struct ItemMetadata: WebsiteItemMetadata {
@@ -17,7 +16,7 @@ struct Blog: Website {
     }
     
     // Update these properties to configure your website:
-    var url = URL(string: "https://testblog.bitomule.com")!
+    var url = URL(string: "https://blog.bitomule.com")!
     var name = "Bitomule's learning shack"
     var description = "My thoughts about iOS, technology or any other thing that comes to my mind."
     var language: Language { .english }
