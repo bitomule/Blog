@@ -32,6 +32,9 @@ try Blog().publish(
     plugins: [
         .splash(withClassPrefix: ""),
         .generateCNAME(with: ["blog.bitomule.com","www.blog.bitomule.com","bitomule.com"]),
-        .verifyResourcesExist()
+        .verifyResourcesExist(),
+        .init(name: "Include 404", installer: { context in
+            try context.copyFileToOutput(from: "Content/404.html")
+        })
     ]
 )
