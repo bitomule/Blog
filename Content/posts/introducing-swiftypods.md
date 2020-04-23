@@ -60,7 +60,7 @@ There are some interesting details about it:
 
 The first experiment was hardcoding a template inside the package and running the first command, generate. After some fixes is worked as expected so I moved on to the next feature.
 
-##u Editing
+## Editing
 
 Once I had a basic DSL, I noticed that in order to get the advantages from it I needed to build a way to edit those files. 
 
