@@ -1,11 +1,9 @@
 ---
+title:Moving blog again
 date: 2020-04-13 17:52
 tags: Blog, Publish
 excerpt: I’ve moved my blog again after just a few months with a good reason.
 ---
-
-# Moving blog again
-
 I like to play, and I like to play with new things that force me into the unknown (Just a bit). In this case that interested was powered by my old hosting getting into constants problems. I don’t use this blog much but each time I wanted to share a link to explain something the docker running in my home NAS failed.
 
 It was failing for many reasons, all related to how difficult it is to host something at home using a home network. Last months were better, I was able to fix a huge issue related with the NAS network and it was working 99.99% of the time but I still had to keep docker running always and eating resources from my not so big NAS.

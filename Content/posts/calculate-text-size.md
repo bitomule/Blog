@@ -1,10 +1,9 @@
 ---
+title: Getting text size on iOS
 date: 2016-04-3 16:35
 tags:  iOS
 excerpt: Calculating size of texts is one of the most common questions when you start working on iOS. Soon you need to calculate the size of some UI element and frequently that includes text. I explored some of the ways to do it and here I give some insights from that exploration.
 ---
-# Getting text size on iOS
-
 I'm currently working on an iPhone app that uses a 3rd party chat software and adding some custom message types to it requires that collection cell height is precalculated. I don't remember all the iOS APIs on my head but a quick search on google just showed a UIFont extension that calculates a text box (UILabel or TextView) size.  It was something like:
 
 ```swift

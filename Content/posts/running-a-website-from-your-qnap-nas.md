@@ -1,13 +1,11 @@
 ---
+title: Running a website from your Qnap NAS
 date: 2019-03-09 08:44
 tags: Web, NAS
 excerpt: The first proper post of the blog is something I don't do frequently: playing with the web.
 In this post, I'll explain how after some hours I got the blog running with a custom domain and SSL using docker in a qnap NAS.
 The process should work on any NAS (with Synology it could be even easier) but I'll explain it using the Qnap process. 
 ---
-
-# Running a website from your Qnap NAS
-
 The first proper post of the blog is something I don't do frequently: playing with the web.
 In this post, I'll explain how after some hours I got the blog running with a custom domain and SSL using docker in a qnap NAS.
 The process should work on any NAS (with Synology it could be even easier) but I'll explain it using the Qnap process.

@@ -1,9 +1,8 @@
 ---
+title: Realm Type-Safe update
 date: 2019-03-19 16:23
 excerpt: A few days ago, at work, my colleague informed me about an issue we were about to solve. He had to update a Realm object property as easy and as fast as possible because that process will happen tons of times. To do it he was about to use Realm Key-value coding and also the partial update option.
 ---
-# Realm Type-Safe update
-
 A few days ago, at work, my colleague [@amartinezmes](https://twitter.com/amartinezmes) informed me about an issue we were about to solve. He had to update a Realm object property as easy and as fast as possible because that process will happen tons of times. To do it he was about to use Realm Key-value coding and also the partial update option. The first approach was something like this:
 
 ```swift

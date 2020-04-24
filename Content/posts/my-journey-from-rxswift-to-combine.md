@@ -1,10 +1,9 @@
 ---
+title:My Journey from RxSwift to Combine
 date: 2019-06-25 16:35
 tags: Combine, iOS
 excerpt: Some days Ago I decided it was the perfect time to start trying Combine by introducing it into my latest project and this is the story on what issues I’ve found, what I have learned and what I had to fix myself.
 ---
-# My Journey from RxSwift to Combine
-
 Some days Ago I decided it was the perfect time to start trying Combine by introducing it into my latest project [(The app I made for my father)](https://blog.bitomule.com/kitchenorder/) and this is the story on what issues I’ve found, what I have learned and what I had to fix myself.
 
 ## iOS 13
