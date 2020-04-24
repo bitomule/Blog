@@ -39,7 +39,7 @@ struct BlogHTMLFactory: HTMLFactory {
     func makeItemHTML(for item: Item<Blog>, context: PublishingContext<Blog>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: context.site),
+            .itemHead(for: context.site, itemTitle: item.title),
             .body(
                 .grid(
                     .sidebar(for: context.site),
