@@ -127,8 +127,11 @@ My setup is quite easy but works really well:
 
 
 So the process when I want to start a new blog post is:
+
 1. Run a shortcut from my iPad home screen
-2. Type tile and tags (I want to improve this step using Data Jar to have some already defined tags)
+
+2. Type title and tags (I want to improve this step using Data Jar to have some already defined tags)
+
 3. The shortcut opens iA Writer for me so I just have to create a new draft, paste metadata and start Writing.
 
 Once the draft is ready to be published I just move it to the posts folder, push my repository to remote and Github Actions takes care of publishing it.
