@@ -1,7 +1,7 @@
 ---
 date: 2020-05-01 10:05
 tags: Publish, Swift, Github, Web
-excerpt:
+excerpt: I have already shared how to get started with Publish. Today I’ll share how I’m automating the deploy process using Github Actions and how it enabled editing from my iPad.
 title: Automating deploy of your publish site to github pages
 ---
 This is the second post about Publish, the static website building tool by John Sundell.
