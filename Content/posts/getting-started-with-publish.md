@@ -1,7 +1,7 @@
 ---
 title: Getting started with publish
 date: 2020-04-17 19:00
-tags:  Blog, Publish
+tags:  Publish, Swift, Github, Web
 excerpt: I just moved my blog to github pages using Publish and the first steps were consusing and difficult. John Sundell built an amazing tool, but a one man effort can't solve and document everything. I will write a series of posts about Publish trying to explain all the details to get a website up and running using Publish.
 ---
 As you may have seen [I’ve moved my blog again](https://blog.bitomule.com/posts/moving-blog-again/) and I’m using. [Publish](https://github.com/JohnSundell/Publish)) ,an static website builder.  But, what does static mean?
