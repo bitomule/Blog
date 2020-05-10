@@ -2,11 +2,7 @@
 title:Introducing SwiftyPods: generate your podfile using Swift 
 date: 2020-04-22 19:36
 tags: SPM,CommandLine,Project,Swift
-excerpt: I wanted to create a Swift command line tool for months and finally I found the need.
-
-I just published it as an open source package available in homebrew and mint , a tool to generate using a Swift DSL your CocoaPods podfiles. 
-
-I’ve learned a lot and I’ll try to share some of the details of the development process.
+excerpt: I wanted to create a Swift command line tool for months and finally I found the need. I just published it as an open source package available in homebrew and mint , a tool to generate using a Swift DSL your CocoaPods podfiles. I’ve learned a lot and I’ll try to share some of the details of the development process.
 ---
 I’ve been working on this for weeks and today I am happy to finally share it with you.
 
