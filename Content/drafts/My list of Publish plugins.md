@@ -5,11 +5,11 @@ excerpt:
 title: My list of Publish plugins
 ---
 
-If you have already read my posts about getting started with publish and automatic your deploy you may also be interested in what plugins I use to make my life easier. This is my list of Publish plugins:
+If you have already read my posts about getting started with publish and automatic your deploy, you may also be interested in what plugins I use to make my life easier. This is my list of Publish plugins:
 
 ## Splash
 
-The obvious one. If you’re using Publish to deploy your site it quite possible you are interested in showing code snippets in your posts. Splash is also created by John Sundell and it creates a nice HTML formatted snipped from Swift code. You have other options for other languages but if you’re just interested in Swift Splash is the best option.
+This is the more obvious one. If you’re using Publish to deploy your site, is quite possible you are interested in showing code snippets in your posts. Splash is also created by John Sundell and it creates a nice HTML formatted snipped from Swift code. You have other options for other languages, but if you’re just interested in Swift Splash is the best option.
 
 ### How to add it
 
