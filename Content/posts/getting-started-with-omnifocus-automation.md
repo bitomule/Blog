@@ -1,7 +1,7 @@
 ---
-date: 2020-06-01 20:22
+date: 2020-06-02 18:00
 tags: OmniFocus, Automation
-excerpt: I’ve exploring OmniFocus Automation during it’s beta and I wanted to share the first steps to get start with this new awesome feature.
+excerpt: I’ve exploring OmniFocus Automation during it’s beta and I wanted to share the first steps to get started with this new awesome feature.
 title: Getting started with Omnifocus automation
 ---
 
@@ -163,7 +163,7 @@ For iOS the process is similar:
 
 1. Tap on the terminal like icon
 
-/images/omnifocus-automation-ios-menu.png
+![](/images/omnifocus-automation-ios-menu.png)
 
 2. Tap on configure modules
 3. Tap on Add linked folder
