@@ -1,7 +1,7 @@
 ---
-date: 2020-06-01 11:06
+date: 2020-06-06 12:06
 tags: Publish, Web, Swift
-excerpt:
+excerpt: Some months ago I moved my blog and created it using Publish by John Sundell. It was a really good experience made better by some community plugins. Today I want to share the plugins I used so anyone getting started with Publish can use them if needed.
 title: My list of Publish plugins
 ---
 
